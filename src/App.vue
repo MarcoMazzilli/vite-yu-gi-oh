@@ -1,7 +1,8 @@
 <script>
-import Header       from './components/Header.vue';
-import Main         from './components/Main.vue';
-import Footer       from './components/Footer.vue';
+import Header         from './components/Header.vue';
+import Main           from './components/Main.vue';
+import Footer         from './components/Footer.vue';
+import SearchSection  from './components/patials/SearchSection.vue';
 
 export default {
 
@@ -10,7 +11,8 @@ export default {
   components:{
     Header,
     Main,
-    Footer
+    SearchSection,
+    Footer,
   }
 }
 
@@ -24,7 +26,6 @@ export default {
 
 <Main />
 
-<Footer />
 
 </template>
 
