@@ -1,7 +1,7 @@
 <script>
 export default {
 name :  'Card',
-proprs:{
+props:{
     img : String,
     name: String,
     archetype : String,
@@ -17,7 +17,6 @@ proprs:{
             <div class="name">{{ name }}</div>
             <div class="archetype">{{ archetype }}</div>
         </div>
-
     </div>
 
 </template>

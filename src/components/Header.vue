@@ -7,7 +7,7 @@ export default {
 <template>
   <header>
 
-    <img src="/public/logo.bmp" alt="">
+    <img src="/logo.bmp" alt="">
     <h1>Yu-gi-oh Api</h1>
 
   </header>

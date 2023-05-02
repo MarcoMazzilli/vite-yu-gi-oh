@@ -1,12 +1,18 @@
 <script>
 import Card from './patials/Card.vue';
 import SearchSection from './patials/SearchSection.vue';
+import {store}        from '../data/store'
 
 export default {
   name : "Main",
   components:{
     SearchSection,
     Card,
+  },
+  data(){
+    return{
+      store,
+    }
   }
 }
 </script>
@@ -24,7 +30,13 @@ export default {
           <p>Found 39 cards</p>
         </div>
 
-        <Card />
+        <Card v-for="card in store.resultArray"
+        :key="card.id"
+        :name="card.name"
+        :archetype="card.archetype"
+        :img="card.card_images[0].image_url"
+
+        />
 
       </div>
       
