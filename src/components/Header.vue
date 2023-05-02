@@ -5,14 +5,25 @@ export default {
 </script>
 
 <template>
-  <h1>Header</h1>
+  <header>
+
+    <img src="/public/logo.bmp" alt="">
+    <h1>Yu-gi-oh Api</h1>
+
+  </header>
 </template>
 
 <style lang="scss">
 @use '../scss/partials/variables.scss' as *;
 
-h1{
-  color: $primary-color;
+header{
+  height: 100px;
+  display: flex;
+  align-items: center;
+  img{
+    height: 30%;
+    margin: 0 20px;
+  }
 }
 
 </style>
