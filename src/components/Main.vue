@@ -1,12 +1,10 @@
 <script>
-import Card from './patials/Card.vue';
-import SearchSection from './patials/SearchSection.vue';
-import {store}        from '../data/store'
+import Card              from './patials/Card.vue';
+import {store}           from '../data/store'
 
 export default {
   name : "Main",
   components:{
-    SearchSection,
     Card,
   },
   data(){
@@ -19,15 +17,13 @@ export default {
 
 <template>
 
-  <SearchSection />
-
   <div class="main-wrapper">
     <div class="container">
 
       <div class="card-container">
 
         <div class="counter-found">
-          <p>Found 39 cards</p>
+          <p>Found {{ store.resultArray.length  }} cards</p>
         </div>
 
         <Card v-for="card in store.resultArray"

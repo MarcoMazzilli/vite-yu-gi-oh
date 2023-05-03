@@ -24,17 +24,40 @@ export default {
   methods:{
 
     getApi(){
-      axios.get(store.apiUrl +  "?num=25&offset=0")
-      .then(result => {
-        store.resultArray = result.data.data
-        console.log(result.data.data[0].card_images[0].image_url)
-        console.log(store.resultArray)
+      axios.get(store.apiUrl, {
+        params :{
+          num : store.numCard,
+          offset : store.offsetArray,
+          type : store.filterType
+        }
       })
-    }
+
+      .then(result => {
+
+        store.resultArray = result.data.data
+
+      })
+    },
+    // getApiFull(){ //Questa la chiamo quando filtro un informazione
+    //   axios.get(store.apiUrl , {
+    //     params :{
+    //       type : store.filterType
+    //     }
+    //   })
+    //   .then(result => {
+    //     store.resultArrayAll = result.data.data
+    //     console.log('store.resultArrayAll',store.resultArrayAll)
+    //   })
+    // },
+    // printFiltered(){
+    //   store.resultArray = [...store.resultArrayAll.splice(store.offsetArray , store.numCard)];
+    //   console.log("store.resultArray -->",store.resultArray)
+    // }
 
   },
   mounted(){
     this.getApi()
+    // this.getApiFull()
   }
 }
 
@@ -45,6 +68,8 @@ export default {
 <template>
 
 <Header />
+
+<SearchSection />
 
 <Main />
 

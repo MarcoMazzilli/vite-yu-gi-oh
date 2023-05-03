@@ -1,6 +1,15 @@
 <script>
+import { store } from "../../data/store";
+import dbType from "../../data/dbType"
+
 export default {
-  name : "Main"
+  name : "SearchSection",
+  data(){
+    return{
+      store,
+      dbType,
+    }
+  }
 }
 </script>
 
@@ -8,11 +17,10 @@ export default {
   <div class="wrapper">
     <div class="container">
 
-      <select class="form-select" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+      <select v-model="store.filterType" class="form-select" aria-label="Default select example">
+        <option value="null" selected>All the cards</option>
+        <option v-for="(type,id) in dbType" :key="id"
+         :value="type">{{ type }}</option>
     </select>
 
     </div>
