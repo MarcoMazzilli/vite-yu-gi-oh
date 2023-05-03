@@ -69,7 +69,7 @@ export default {
 
 <Header />
 
-<SearchSection />
+<SearchSection @changeFilterType="(getApi)" />
 
 <Main />
 

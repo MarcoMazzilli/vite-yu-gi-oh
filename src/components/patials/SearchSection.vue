@@ -9,7 +9,7 @@ export default {
       store,
       dbType,
     }
-  }
+  },
 }
 </script>
 
@@ -18,9 +18,13 @@ export default {
     <div class="container">
 
       <select v-model="store.filterType" class="form-select" aria-label="Default select example">
-        <option value="null" selected>All the cards</option>
-        <option v-for="(type,id) in dbType" :key="id"
-         :value="type">{{ type }}</option>
+        <option @click="$emit('changeFilterType')"  value="null" selected>All the cards</option>
+        <option 
+        @click="$emit('changeFilterType')" 
+        v-for="(type,id) in dbType" 
+        :key="id"
+        :value="type">{{ type }}
+      </option>
     </select>
 
     </div>
