@@ -33,7 +33,7 @@ export default {
         <Card v-for="card in store.resultArray"
         :key="card.id"
         :name="card.name"
-        :archetype="card.archetype"
+        :type="card.type"
         :img="card.card_images[0].image_url"
 
         />
